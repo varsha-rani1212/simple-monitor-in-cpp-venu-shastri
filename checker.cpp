@@ -7,7 +7,7 @@ void printToConsole(string statement)         //impure function
   cout << statement;
 }
 
-bool checkBattery(float temperature)
+bool checkTemperature(float temperature)
 {
   if(temperature >= 0 && temperature <= 45)
     return true;
@@ -33,9 +33,9 @@ bool checkChargeRate(float chargeRate)
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   
-   checkBattery(temperature);
-   checkSoc(soc);
-   checkChargeRate(chargeRate);
+   if(checkTemperature(temperature) == true && checkSoc(soc) == true && checkChargeRate(chargeRate) == true)
+     return true;
+  return false;
 }
 
 int main() {
