@@ -33,9 +33,11 @@ bool checkChargeRate(float chargeRate)
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   
-   if(checkTemperature(temperature) == true && checkSoc(soc) == true && checkChargeRate(chargeRate) == true)
-     return true;
-  return false;
+   bool isTempOk = checkTemperature(temperature);
+   bool isSocOk = checkSoc(soc);
+   bool isChargeRateOk = checkChargeRate(chargeRate);
+  
+   return isTempOk && isSocOk && isChargeRateOk;
 }
 
 int main() {
