@@ -7,7 +7,7 @@ void printToConsole(string statement)         //impure function
   cout << statement;
 }
 
-void dummyFunction(string dummy){}
+void dummyFunction(){}
 
 bool checkTemperature(float temperature, void *print)
 {
@@ -46,6 +46,6 @@ bool batteryIsOk(float temperature, float soc, float chargeRate,void *dummyFunct
 }
 
 int main() {
-  assert(batteryIsOk(25, 70, 0.7, &dummyFunction(dummy)) == true);
-  assert(batteryIsOk(50, 85, 0, &dummyFunction(dummy)) == false);
+  assert(batteryIsOk(25, 70, 0.7, &dummyFunction) == true);
+  assert(batteryIsOk(50, 85, 0, &dummyFunction) == false);
 }
